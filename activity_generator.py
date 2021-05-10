@@ -3,7 +3,7 @@ This script reads the connectivity structure and simulates network activity.
 """
 
 import numpy as np
-from lattice_activity import *
+from network_setup import *
 import random
 
 def act_gen(L,m,pext,ps,ptype,T):
@@ -19,7 +19,7 @@ def act_gen(L,m,pext,ps,ptype,T):
         self-excitation probability
     ptype: string
         connectivity structure ('local', 'random', 'random_sp2', 'random_sp3', 'random_sp5', 'random_sp7')
-        'local' is Moore neighborhood, 'random_spR' is selecting * neighbors within the radius R.
+        'local' is Moore neighborhood, 'random_spR' is for 8 random neighbors within the radius R.
     T : int
         number of time-steps per each trial
     
@@ -81,7 +81,7 @@ def act_gen(L,m,pext,ps,ptype,T):
         lattice_activity.append(s)
         save_counter = save_counter+1     	    
 
-        s = np.array([update_network_states_ref0(k,L,L,s,p,neigh_all) for k in range(0,len(s))])   
+        s = np.array([update_network_states(k,L,L,s,p,neigh_all) for k in range(0,len(s))])   
 
         if save_counter == T:
             do_break = 1

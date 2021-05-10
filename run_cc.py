@@ -3,7 +3,7 @@ This script runs the simulation code for given parameters and computes cross-cor
 """
 
 import activity_generator as act
-import lattice_activity as lat_act
+import network_setup as net_set
 import numpy as np
 import random
 
@@ -40,7 +40,7 @@ for tr in range(num_trials):
         print('distance:', neigh_dist)
         crosscor_sum = 0
         nonzero_cells = 0
-        neigh_all = lat_act.find_allneigh(L,L,neigh_dist) # find neigbors up to dist without self-excitation
+        neigh_all = net_set.find_allneigh(L,L,neigh_dist) # find neigbors up to dist without self-excitation
         total_neigh = len(neigh_all[0][neigh_dist-1])
 
         # cc with units on a certian distance
