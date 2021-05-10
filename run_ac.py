@@ -9,7 +9,7 @@ L = 100 # lattice size as L*L
 m = 0.99 # branching parameter (ps + 8pr)
 ps = 0.88 # self-excitation probability
 pext = 0.0001 # external input
-ptype = 'local' # connectivity structure
+conn_type = 'local' # connectivity structure
 num_trials = 1 # number of trials
 T = 100000 # duration of trials (in time steps)
 timelag = 300 # maximum time-lag for computing autocorrelations
@@ -27,8 +27,8 @@ for tr in range(num_trials):
     print('tr:', tr)
 
     # simulate the network
-    laT = act.act_gen(L,m,pext,ps,ptype,T)
-#     np.save(sim_save_path +ptype+'_ps'+str(pa)+'_sig'+str(m)+'_pext'+str(pext)+'_T'+str(T), laT)
+    laT = act.act_gen(L,m,pext,ps,conn_type,T)
+#     np.save(sim_save_path +conn_type+'_ps'+str(pa)+'_sig'+str(m)+'_pext'+str(pext)+'_T'+str(T), laT)
 
 
     # compute autocorrelations
@@ -50,6 +50,6 @@ for tr in range(num_trials):
     autocor_avg = autocor_sum/nonzero_cells
     ac_all.append(autocor_avg)    
     psth_all.append(np.mean(laT, axis =0))
-# np.save(ac_save_path +'ac_' + ptype +'_T' + str(T)+'_trial'+str(num_trials)+'_ps'+str(ps)+'_bp'+str(m) +'_pext'+ str(pext),[psth_all, ac_all])
+# np.save(ac_save_path +'ac_' + conn_type +'_T' + str(T)+'_trial'+str(num_trials)+'_ps'+str(ps)+'_bp'+str(m) +'_pext'+ str(pext),[psth_all, ac_all])
 
 
