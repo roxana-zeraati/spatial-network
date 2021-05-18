@@ -1,8 +1,8 @@
 ## Overview
 Codes for running the network model with spatial connectivity to study how network structure affects local and global temporal dynamics.
 
-For details check: preprint link
-Please cite this reference when you use this code for a scientific publication.
+For details check (please cite this reference when you use this code for a scientific publication): Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T., Levina, A. & Engel, T. A. Attentional modulation of intrinsic timescales in visual cortex and spatial networks. bioRxiv 2021.05.17.444537 (2021). https://www.biorxiv.org/content/10.1101/2021.05.17.444537v1
+
 
 - act_gen: the function that simulates the network (import from activity_generator.py)
 - run_ac.py: the script for simulating the network and computing autocorrelations.
