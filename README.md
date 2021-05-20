@@ -13,7 +13,7 @@ Please cite this reference when you use these codes for a scientific publication
 Available connectivity structures for the network (conn_type variable):
 - 'local': Moore neighborhood
 - 'random': random connectivity
-- 'random_spR' (e.g., 'random_sp2'): 8 random connections within the radius R
+- 'random_spR' (e.g., 'random_sp2'): 8 random connections within the radius R = 2,3,5,7
 
 
 ## Dependencies
