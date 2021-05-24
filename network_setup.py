@@ -69,7 +69,7 @@ def find_allneigh(n,m,num_neigh):
 def find_allneigh_strongSelf(n,m,num_neigh): # STRONG SELF_CONNECTIVITY
     # n and m are lattice dimensions
     # num_neigh is the maximum number of nearest neighbors(first,second,etc.)
-    num_neigh = num_neigh + 1 #adding each cell as the strongest neighbor to itself
+    num_neigh = num_neigh + 1 #adding each cell as a neighbor to itself (self-excitation)
     num_cell = n*m
     neigh_all = []
     for i in range(num_cell):

@@ -37,7 +37,7 @@ def act_gen(L,m,pext,ps,conn_type,T):
     
    
     if conn_type == 'local':
-        neigh_all = find_allneigh_strongSelf(L,L,num_neigh+1) 
+        neigh_all = find_allneigh_strongSelf(L,L,num_neigh) 
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
     elif conn_type == 'random':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
