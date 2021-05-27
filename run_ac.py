@@ -9,7 +9,7 @@ L = 100 # lattice size as L*L
 m = 0.99 # branching parameter (ps + 8pr)
 ps = 0.88 # self-excitation probability
 pext = 0.0001 # external input
-conn_type = 'local' # connectivity structure
+conn_type = 'local' # connectivity structure (other connectivity types now only work with L = 100 size)
 num_trials = 1 # number of trials
 T = 100000 # duration of trials (in time steps)
 timelag = 300 # maximum time-lag for computing autocorrelations

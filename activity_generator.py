@@ -20,6 +20,7 @@ def act_gen(L,m,pext,ps,conn_type,T):
     conn_type: string
         connectivity structure ('local', 'random', 'random_sp2', 'random_sp3', 'random_sp5', 'random_sp7')
         'local' is Moore neighborhood, 'random_spR' is for 8 random neighbors within the radius R.
+        Connectivity types other than local now only work with L = 100 size.
     T : int
         number of time-steps per each trial
     
