@@ -19,8 +19,8 @@ def act_gen(L,m,pext,ps,conn_type,T):
         self-excitation probability
     conn_type: string
         connectivity structure ('local', 'random', 'random_sp2', 'random_sp3', 'random_sp5', 'random_sp7')
-        'local' is Moore neighborhood, 'random_spR' is for 8 random neighbors within the radius R.
-        Connectivity types other than local now only work with L = 100 size.
+        'local' is Moore neighborhood, 'random_spR' is 8 randomly selected neighbors within the radius R.
+        Connectivity types other than 'local' now only work with L = 100 size.
     T : int
         number of time-steps per each trial
     
@@ -42,23 +42,23 @@ def act_gen(L,m,pext,ps,conn_type,T):
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
     elif conn_type == 'random':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
-        neigh_all = np.load('../connectivity_structures/neigh_random_8con_size10000.npy') 
+        neigh_all = np.load('../connectivity_structures/neigh_random_8con_size10000.npy', allow_pickle=True) 
     elif conn_type == 'random_sp2':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
-                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k2.npy') 
+                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k2.npy', allow_pickle=True) 
     elif conn_type == 'random_sp3':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
-                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k3.npy') 
+                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k3.npy', allow_pickle=True) 
     elif conn_type == 'random_sp5':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
-                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k5.npy')                   
+                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k5.npy', allow_pickle=True)                   
     elif conn_type == 'random_sp7':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
-                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k7.npy')
+                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k7.npy', allow_pickle=True)
    
 
     print('probabilities: ',p)
