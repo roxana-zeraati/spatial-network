@@ -151,3 +151,44 @@ def update_network_states(k,m,n,s,p,neigh_all):
     s_new =  int(d < pActive)
     return s_new
 
+
+# functions for the 1D network
+def find_upto_nth_neigh_general_1D(k,n,nth):
+    i_left_all = []
+    i_right_all = []
+    for ct in (np.arange(nth)+1):
+        i_left = int(k-ct >= 0) * (k-ct) + (n-(ct-k)) * int(k-ct < 0)
+        i_right = int(k+ct <= n-1) * (k+ct) + (ct - ((n-1)-k)-1) * int(k+ct > n-1)
+        i_left_all.append(i_left)
+        i_right_all.append(i_right)
+    NB = i_left_all + i_right_all
+    return NB
+
+
+
+
+def find_allneigh_strongSelf_1D_uniform(n,num_neigh): # STRONG SELF_CONNECTIVITY
+    # n is number of units
+    # num_neigh is the maximum number of nearest neighbors(first,second,etc.)
+    num_cell = n
+    neigh_all = []
+    for i in range(num_cell):       
+        neigh_all.append([[i], find_upto_nth_neigh_general_1D(i,n,num_neigh)])
+    return neigh_all
+
+def update_network_states_1D(k,n,s,p,neigh_all):
+    pActive = 0
+    for i in range(len(p)):
+        if i==0:
+            pActive = pActive + p[0]
+        else:             
+            NB = neigh_all[k][i-1]  
+            active_NB = sum(s[NB]>0)
+            pActive = pActive + p[i]*active_NB
+    
+    if pActive > 1:
+        pActive = 1
+
+    d = np.random.rand()
+    s_new =  int(d < pActive)
+    return s_new

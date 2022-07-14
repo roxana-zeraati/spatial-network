@@ -26,7 +26,7 @@ psth_all = [] # trial firing rate over time
 for tr in range(num_trials):
     print('tr:', tr)
 
-    # simulate the network
+    # simulate the network, default is R=1 (connectivity radius), otherwise also define R
     laT = act.act_gen(L,m,pext,ps,conn_type,T)
 #     np.save(sim_save_path +conn_type+'_ps'+str(pa)+'_sig'+str(m)+'_pext'+str(pext)+'_T'+str(T), laT)
 

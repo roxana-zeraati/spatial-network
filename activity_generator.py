@@ -6,7 +6,7 @@ import numpy as np
 from network_setup import *
 import random
 
-def act_gen(L,m,pext,ps,conn_type,T):
+def act_gen(L,m,pext,ps,conn_type,T,R=1):
     """function for simulating network activity.
 
     Parameters
@@ -18,11 +18,14 @@ def act_gen(L,m,pext,ps,conn_type,T):
     ps : float
         self-excitation probability
     conn_type: string
-        connectivity structure ('local', 'random', 'random_sp2', 'random_sp3', 'random_sp5', 'random_sp7')
-        'local' is Moore neighborhood, 'random_spR' is 8 randomly selected neighbors within the radius R.
+        connectivity structure ('local', 'random', 'random_sp2', 'random_sp3', 'random_sp5', 'random_sp7', 'local_1D')
+        'local' (2D model) and 'local_1D'(1D model) are the same as Moore neighborhood when R = 1.
+        'random_spR' is 8 randomly selected neighbors within the radius R.
         Connectivity types other than 'local' now only work with L = 100 size.
     T : int
         number of time-steps per each trial
+    R: int
+        Connectivity radius (default: R = 1)
     
 
     Returns
@@ -33,7 +36,8 @@ def act_gen(L,m,pext,ps,conn_type,T):
     """
     
     
-    num_neigh = 1 # this is for having 8 neighnors 
+    # num_neigh = 1 # this is for having 8 neighnors 
+    num_neigh = R
     self_exciteP = 1 # cosidering self-exciation        
     
    
@@ -54,11 +58,14 @@ def act_gen(L,m,pext,ps,conn_type,T):
     elif conn_type == 'random_sp5':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
-                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k5.npy', allow_pickle=True)                   
+                neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k5.npy', allow_pickle=True)         
     elif conn_type == 'random_sp7':
         p = [pext, ps, (m-ps)/((2*num_neigh+1)**2-1)] 
         if num_neigh == 1:
                 neigh_all = np.load('../connectivity_structures/neigh_randomSpa_8con_size10000_k7.npy', allow_pickle=True)
+    elif conn_type == 'local_1D':
+        neigh_all = find_allneigh_strongSelf_1D_uniform(L,num_neigh) 
+        p = [pext, ps, (m-ps)/(2*num_neigh)] 
    
 
     print('probabilities: ',p)
