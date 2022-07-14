@@ -12,9 +12,9 @@ Please cite this reference when you use these codes for a scientific publication
 
 
 Available connectivity structures for the network (conn_type variable):
-- 'local': 2D network with local connectivity (defined within the radius R in Chebyshev distances)
+- 'local': 2D network with local connectivity (defined within the radius R in Chebyshev distances, R=1 is the Moore neighborhood)
 - 'local_1D': 1D network with local connectivity (defined within the radius R in Chebyshev distances)
-- 'random': 2D network withrandom connectivity
+- 'random': 2D network with random connectivity
 - 'random_spR' (e.g., 'random_sp2'): 2D network with 8 random connections within the radius R = 2,3,5,7
 
 
