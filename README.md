@@ -6,9 +6,11 @@ Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T.
 Please cite this reference when you use these codes for a scientific publication.
 
 
+Functions/scripts descriptions:
 - act_gen: the function that simulates the network (import from activity_generator.py)
 - run_ac.py: the script for simulating the network and computing autocorrelations.
 - run_cc.py: the script for simulating the network and computing cross-correlations.
+
 
 
 Available connectivity structures for the network (conn_type variable):
