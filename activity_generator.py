@@ -12,7 +12,7 @@ def act_gen(L,m,pext,ps,conn_type,T,R=1):
     Parameters
     -----------
     L : int
-        lattice size as L*L.
+        lattice size as L*L for the 2D model and as L for the 1D model.
     m : float
         branching parameter.
     ps : float
