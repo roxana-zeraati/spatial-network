@@ -4,7 +4,7 @@ Codes for running the network model with spatial connectivity (in 2D or 1D) to s
 For details and neuroscietific implication of this model check:   
 Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T., Levina, A. & Engel, T. A. (2021). Intrinsic timescales in the visual cortex change with selective attention and reflect spatial connectivity. bioRxiv 2021.05.17.444537. https://www.biorxiv.org/content/10.1101/2021.05.17.444537v2.  
 
-Analytical derivations of spatiotemporal correlations in this model are provided in:
+Analytical derivations of spatiotemporal correlations in this model are provided in:  
 Shi, Y. L., Zeraati, R., Levina, A., & Engel, T. A. (2022). Spatial and temporal correlations in neural networks with structured connectivity. arXiv preprint arXiv:2207.07930. 
 https://arxiv.org/abs/2207.07930.
 
