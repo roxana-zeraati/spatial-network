@@ -6,7 +6,7 @@ Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T.
 
 Analytical derivations of spatiotemporal correlations in this model are provided in:
 Shi, Y. L., Zeraati, R., Levina, A., & Engel, T. A. (2022). Spatial and temporal correlations in neural networks with structured connectivity. arXiv preprint arXiv:2207.07930. 
-https://arxiv.org/abs/2207.07930
+https://arxiv.org/abs/2207.07930.
 
 Please cite the above two references when you use these codes for a scientific publication.
 
