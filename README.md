@@ -1,9 +1,14 @@
 ## Overview
 Codes for running the network model with spatial connectivity (in 2D or 1D) to study how network structure affects spatiotemporal correlations.
 
-For details check:   
-Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T., Levina, A. & Engel, T. A. Attentional modulation of intrinsic timescales in visual cortex and spatial networks. bioRxiv 2021.05.17.444537 (2021). https://www.biorxiv.org/content/10.1101/2021.05.17.444537v1.  
-Please cite this reference when you use these codes for a scientific publication.
+For details and neuroscietific implication of this model check:   
+Zeraati, R., Shi, Y., Steinmetz, N. A., Gieselmann, M. A., Thiele, A., Moore, T., Levina, A. & Engel, T. A. (2021). Intrinsic timescales in the visual cortex change with selective attention and reflect spatial connectivity. bioRxiv 2021.05.17.444537. https://www.biorxiv.org/content/10.1101/2021.05.17.444537v2.  
+
+Analytical derivations of spatiotemporal correlations in this model are provided in:
+Shi, Y. L., Zeraati, R., Levina, A., & Engel, T. A. (2022). Spatial and temporal correlations in neural networks with structured connectivity. arXiv preprint arXiv:2207.07930. 
+https://arxiv.org/abs/2207.07930
+
+Please cite the above two references when you use these codes for a scientific publication.
 
 
 Functions/scripts descriptions:
