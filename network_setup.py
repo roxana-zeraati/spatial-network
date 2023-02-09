@@ -192,3 +192,76 @@ def update_network_states_1D(k,n,s,p,neigh_all):
     d = np.random.rand()
     s_new =  int(d < pActive)
     return s_new
+
+
+def update_network_states_synFilter(k, m, n, s, p, neigh_all, f):
+    """ updating network state with synaptic filtering. 
+    Only works when all neighbors have the same connectivity strength.
+
+    Parameters
+    ----------- 
+    k: unit id to update the state
+    m,n: m*n is the network size
+    s: list of all unit states from the previous time step
+    p: connectivity probabilities
+    neigh_all: list of neighbors for each unit
+    f: synaptic filter
+    
+    """
+    pActive = p[0] + s[k] * p[1] + f[k] # external input + self-excitation + neighbors through filter           
+
+    if pActive > 1:
+        pActive = 1
+
+    d = np.random.rand()
+    s_new =  int(d < pActive)
+    return s_new
+
+def update_synFilter(k, m, n, s, p, neigh_all, f, t_s):
+    """ updating network state with synaptic filtering. 
+    Only works when all neighbors have the same connectivity strength.
+
+    Parameters
+    ----------- 
+    k: unit id to update the state
+    m,n: m*n is the network size
+    s: list of all unit states from the previous time step
+    p: connectivity probabilities
+    neigh_all: list of neighbors for each unit
+    f: synaptic filter
+    t_s: synaptic filter timescale
+    
+    """
+    NB = neigh_all[k][1]  # find neighbors of unit k
+    active_NB = sum(s[NB]>0) # count number of active neighbors
+    f_new = f[k] + (p[2]*active_NB - f[k])/t_s    
+    return f_new
+
+
+def update_network_states_hetrogen(k,m,n,s,p,neigh_all):
+    """ updating network state with heterogeneous ps and pr.
+
+    Parameters
+    ----------- 
+    k: unit id to update the state
+    m,n: m*n is the network size
+    s: list of all unit states from the previous time step
+    p: connectivity probabilities (different ps and pr for each unit)
+    neigh_all: list of neighbors for each unit
+    
+    """
+    pActive = 0
+    for i in range(len(p)):
+        if i==0:
+            pActive = pActive + p[0]
+        else:             
+            NB = neigh_all[k][i-1]  
+            active_NB = sum(s[NB]>0)
+            pActive = pActive + p[i][k]*active_NB
+    
+    if pActive > 1:
+        pActive = 1
+
+    d = np.random.rand()
+    s_new =  int(d < pActive)
+    return s_new
