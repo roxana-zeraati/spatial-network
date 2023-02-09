@@ -14,7 +14,7 @@ Please cite the above two references when you use these codes for a scientific p
 Functions/scripts descriptions:
 - act_gen: the function that simulates the network (import from activity_generator.py)
 - run_ac.py: the script for simulating the network and computing autocorrelations.
-- run_cc.py: the script for simulating the network and computing cross-correlations.
+- run_cc.py: the script for simulating the network and computing cross-correlations.  
 
 
 
@@ -22,12 +22,12 @@ Available connectivity structures for the network (conn_type variable):
 - 'local': 2D network with local connectivity (defined within the radius R in Chebyshev distances, R=1 is the Moore neighborhood)
 - 'local_1D': 1D network with local connectivity (defined within the radius R in Chebyshev distances)
 - 'random': 2D network with random connectivity
-- 'random_spR' (e.g., 'random_sp2'): 2D network with 8 random connections within the radius R = 2,3,5,7
+- 'random_spR' (e.g., 'random_sp2'): 2D network with 8 random connections within the radius R = 2,3,5,7  
 
 
 Additional network models:
 - Network with random connectivity (conn_type = 'random_hetro') and two different cell types: act_gen defined in activity_generator_hetro.py
-- Network with synaptic timescales: act_gen defined in activity_generator_wSynFilter.py
+- Network with synaptic timescales: act_gen defined in activity_generator_wSynFilter.py  
 
 
 ## Dependencies
