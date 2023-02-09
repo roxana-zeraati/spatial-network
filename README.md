@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/366038263.svg)](https://zenodo.org/badge/latestdoi/366038263)
+
+
 ## Overview
 Codes for running the network model with spatial connectivity (in 2D or 1D) to study how network structure affects spatiotemporal correlations.
 
